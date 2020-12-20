@@ -30,7 +30,6 @@ class KnightTravails
     loop do
       @coords = ask_coords(str) 
       break if correct_coord?(@coords)
-      "Write coordinates in a 'x, y' form"
     end
     @coords
   end
