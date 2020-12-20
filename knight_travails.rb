@@ -1,54 +1,24 @@
-class Path
-  attr_reader :root, :goal
+# class Board**
+#   init a 'board'
+#   define allowed_moves for 'move' (in board limits)
 
-  def initialize(start, goal)                    
-    @root = start
-    @goal = goal
-  end
+# class Knight**
+#   init start_coords
+#   define 'knight_moves'
+#   define moves from start_coords: 'possible_moves' and 'allowed_moves'
 
-  def make_children(coords = root)
-    @children = [                                                         
-    Position.new([coords[0] - 2, coords[1] - 1], coords),
-    Position.new([coords[0] - 2, coords[1] + 1], coords),
-    Position.new([coords[0] - 1, coords[1] - 2], coords),
-    Position.new([coords[0] - 1, coords[1] + 2], coords),
-    Position.new([coords[0] + 1, coords[1] - 2], coords),
-    Position.new([coords[0] + 1, coords[1] + 2], coords),
-    Position.new([coords[0] + 2, coords[1] - 1], coords),
-    Position.new([coords[0] + 2, coords[1] + 1], coords)
-    ]
-    @children.select! { |child| child.coords.all? {|c| (0..7).include?(c) } }
-  end
+# class Node
+#   init: coords & parent
 
-  def search_destination(coords = root, queue = [])
-    make_children(coords)
-    @children.each do |child|
-      # return path(child) if child.coords == goal
-      return puts "#{child.coords} FOUND!!" if child.coords == goal
-      queue << child.coords
-    end
-    search_destination(queue.shift, queue)
-    return if queue.empty?
-  end
+# class Path
+#   init: found boolean, found_node, steps, start
+#   def path_to:  add Node.new(start) to children / queue []
+#                 check if child is goal, if not move to queue
+#                 from queue as parent node push children as Node.new to children
+#   def found:  path = [], until found_node.parent.nil? push found_node.parent to path,
+#               make found_node = found_node.parent
+#               print path
 
-  # def path(child)
-  #   print child.parent
-  #   return if child.parent.nil?
-  #   path(child.parent)
-  # end
-end
-
-class Position
-  attr_accessor :coords, :parent
-
-  def initialize(coords, parent = nil)                    
-    @coords = coords
-    @parent = parent
-  end
-end
-
-
-knight = Path.new([0,0], [2,5])
-# p knight.coords
-# p knight.make_children([2,6])
-knight.search_destination
+# game = Board.new
+# alex = Knight.new([2,2])
+# alex.knight_moves([7,2])
