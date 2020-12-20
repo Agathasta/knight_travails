@@ -12,6 +12,6 @@ class Square
   def possible_moves(coords)
     knight_moves = [[-2, -1], [-2, 1], [-1, -2], [-1, 2], [1, -2], [1, 2], [2, -1], [2, 1]]
     knight_moves.map { |move| [coords[0] + move[0], coords[1] + move[1]] }
-                .keep_if { |move| move.all? { |c| (0..7).include?(c) } }
+                .keep_if { |move| move.all? { |c| (1..8).include?(c) } }
   end
 end
