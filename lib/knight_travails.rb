@@ -3,7 +3,7 @@
 require_relative 'pathfinder.rb'
 require_relative 'square.rb'
 
-# UI: Initializes the search and shows the result
+# UI: Initializes the search
 class KnightTravails
   def initialize(start, goal)
     intro
