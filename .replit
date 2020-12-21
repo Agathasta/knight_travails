@@ -1,0 +1,2 @@
+language = "ruby"
+run = "ruby lib/knight_travails.rb"

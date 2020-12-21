@@ -22,7 +22,7 @@ class Pathfinder
 
   def print_path(parent_square)
     rewind_path(parent_square)
-    puts "\nOur knight went from #{@start} to #{@goal} in #{@path.size - 1} moves."
+    puts "\nOur knight went from \e[36m#{@start}\e[0m to \e[36m#{@goal}\e[0m in #{@path.size - 1} moves."
     puts 'This was the path followed:'
     @path.each { |square| p square }
     puts

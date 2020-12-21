@@ -16,14 +16,14 @@ class KnightTravails
 
   def intro
     puts `clear`
-    puts "\n*** KNIGHT TRAVAILS ***"
-    puts "\nA knight can reach from a given square in the chessboard all other squares."
-    puts 'We will calculate the minimum moves needed to go from square START to square END'
-    puts 'and list the squares used to get there.'
-    puts "\nA chessboard has 64 squares. That means that for each square,"
-    puts "coordinates x and y range from 1 to 8."
-    puts "Write coordinates in a 'x, y' form."
-    puts "For example, write 1,8 for the coordinates of the upper right corner.\n"
+    puts(<<~INTRO)
+      \n\e[40m*** KNIGHT TRAVAILS ***\e[0m
+      \nA chessboard has 64 squares. 
+      That means that for each square,
+      coordinates x and y range from 1 to 8.
+      Write coordinates in a 'x, y' form.
+      \e[37m(v.gr. 8,1 for the coordinates of the upper right corner)\e[0m\n
+    INTRO
   end
 
   def get_coords(str)
@@ -35,7 +35,7 @@ class KnightTravails
   end
   
   def ask_coords(str)
-    puts "\nEnter #{str} coordinates:"
+    puts "\nEnter \e[36m#{str}\e[0m coordinates:"
     print '> '
     gets.chomp.split(',').map(&:to_i)
   end
