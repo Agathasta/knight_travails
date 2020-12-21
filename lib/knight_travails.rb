@@ -17,7 +17,7 @@ class KnightTravails
   def intro
     puts `clear`
     puts(<<~INTRO)
-      \n\e[47m*** KNIGHT TRAVAILS ***\e[0m
+      \n\e[40m*** KNIGHT TRAVAILS ***\e[0m
       \nA chessboard has 64 squares. 
       That means that for each square,
       coordinates x and y range from 1 to 8.
